@@ -41,7 +41,7 @@ def editMenuItem(restaurant_id, menu_id):
     editedItem = session.query(MenuItem).filter_by(id = menu_id).one()
     if request.method == 'POST':
 		if request.form['name']:
-			editedItem.name = request.form['name']
+			editedItem.name = request.form['name'] #TODO rest of fields
 		session.add(editedItem)
 		session.commit()
 		flash("Item edited!")
